@@ -77,7 +77,7 @@ const Contato = () => {
                     </div>
                     <div>
                       <h3 className="font-medium">Telefone</h3>
-                      <p className="text-muted-foreground">+244 947 408 021</p>
+                      <p className="text-muted-foreground">+244 923 456 789</p>
                     </div>
                   </div>
 

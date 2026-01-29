@@ -123,7 +123,7 @@ const PoliticaPrivacidade = () => {
               </p>
               <ul>
                 <li>Email: privacidade@justicasemisencao.ao</li>
-                <li>Telefone: +244 947 408 021</li>
+                <li>Telefone: +244 923 456 789</li>
               </ul>
             </div>
           </div>

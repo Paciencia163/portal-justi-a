@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Search, Scale } from "lucide-react";
+import { Menu, X, Search, Scale, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -55,6 +55,18 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          
+          {/* Botão Área Restrita - Desktop */}
+          <Link to="/login">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="ml-2 gap-2 border-primary/20 hover:border-primary/40"
+            >
+              <LogIn className="h-3.5 w-3.5" />
+              Área Restrita
+            </Button>
+          </Link>
         </nav>
 
         {/* Actions */}
@@ -88,6 +100,18 @@ export function Header() {
               </Button>
             )}
           </div>
+
+          {/* Botão Área Restrita - Desktop (Alternativo) */}
+          <Link to="/login" className="hidden md:block lg:hidden">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="gap-2 border-primary/20 hover:border-primary/40"
+            >
+              <LogIn className="h-3.5 w-3.5" />
+              Área Restrita
+            </Button>
+          </Link>
 
           {/* Mobile Search */}
           <Button variant="ghost" size="icon" className="md:hidden">
@@ -126,6 +150,18 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
+                  
+                  {/* Botão Área Restrita - Mobile */}
+                  <Link
+                    to="/login"
+                    onClick={() => setIsOpen(false)}
+                    className="mt-4 rounded-lg border border-primary/20 px-4 py-3 text-sm font-medium transition-colors hover:border-primary/40 hover:bg-primary/5"
+                  >
+                    <div className="flex items-center gap-2">
+                      <LogIn className="h-4 w-4" />
+                      Área Restrita
+                    </div>
+                  </Link>
                 </nav>
                 <div className="pt-4">
                   <Input

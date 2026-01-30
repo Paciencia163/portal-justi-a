@@ -1,21 +1,16 @@
 import { Link } from "react-router-dom";
 import { Scale, Facebook, Twitter, Linkedin, Mail } from "lucide-react";
+import { useCategories } from "@/hooks/useArticles";
 
-const footerLinks = {
-  portal: [
-    { href: "/sobre", label: "Sobre o Portal" },
-    { href: "/contato", label: "Contato" },
-    { href: "/politica-privacidade", label: "Política de Privacidade" },
-  ],
-  categorias: [
-    { href: "/categorias/direito-penal", label: "Direito Penal" },
-    { href: "/categorias/direito-civil", label: "Direito Civil" },
-    { href: "/categorias/direito-trabalhista", label: "Direito Trabalhista" },
-    { href: "/categorias/direito-constitucional", label: "Direito Constitucional" },
-  ],
-};
+const portalLinks = [
+  { href: "/sobre", label: "Sobre o Portal" },
+  { href: "/contato", label: "Contato" },
+  { href: "/politica-privacidade", label: "Política de Privacidade" },
+];
 
 export function Footer() {
+  const { data: categories = [] } = useCategories();
+
   return (
     <footer className="border-t border-border bg-primary text-primary-foreground">
       <div className="container py-12 md:py-16">
@@ -73,7 +68,7 @@ export function Footer() {
               O Portal
             </h3>
             <ul className="space-y-2">
-              {footerLinks.portal.map((link) => (
+              {portalLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     to={link.href}
@@ -86,19 +81,19 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Categories */}
+          {/* Categories - Dynamic */}
           <div>
             <h3 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider">
               Categorias
             </h3>
             <ul className="space-y-2">
-              {footerLinks.categorias.map((link) => (
-                <li key={link.href}>
+              {categories.slice(0, 6).map((category) => (
+                <li key={category.id}>
                   <Link
-                    to={link.href}
+                    to={`/categorias/${category.slug}`}
                     className="text-sm opacity-80 transition-opacity hover:opacity-100"
                   >
-                    {link.label}
+                    {category.name}
                   </Link>
                 </li>
               ))}

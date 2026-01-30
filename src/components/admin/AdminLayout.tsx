@@ -10,6 +10,7 @@ import {
   LogOut,
   Menu,
   X,
+  Megaphone,
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -23,6 +24,7 @@ const navItems = [
   { href: "/admin/artigos", label: "Artigos", icon: FileText },
   { href: "/admin/categorias", label: "Categorias", icon: FolderOpen },
   { href: "/admin/autores", label: "Autores", icon: Users },
+  { href: "/admin/publicidades", label: "Publicidades", icon: Megaphone },
 ];
 
 export function AdminLayout({ children }: AdminLayoutProps) {

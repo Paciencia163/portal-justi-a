@@ -14,6 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
+      ads: {
+        Row: {
+          active: boolean
+          clicks: number
+          created_at: string
+          end_date: string | null
+          id: string
+          image_url: string
+          impressions: number
+          link_url: string | null
+          position: string
+          start_date: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          clicks?: number
+          created_at?: string
+          end_date?: string | null
+          id?: string
+          image_url: string
+          impressions?: number
+          link_url?: string | null
+          position?: string
+          start_date?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          clicks?: number
+          created_at?: string
+          end_date?: string | null
+          id?: string
+          image_url?: string
+          impressions?: number
+          link_url?: string | null
+          position?: string
+          start_date?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       article_tags: {
         Row: {
           article_id: string

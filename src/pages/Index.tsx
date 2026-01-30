@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { FeaturedNews } from "@/components/news/FeaturedNews";
 import { LatestNews } from "@/components/news/LatestNews";
 import { CategorySection } from "@/components/news/CategorySection";
+import { AdBanner } from "@/components/ads/AdBanner";
 import { useFeaturedArticles, usePublishedArticles, useCategoriesWithCount } from "@/hooks/useArticles";
 import { Helmet } from "react-helmet-async";
 
@@ -39,11 +40,25 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Top Advertisement Banner */}
+        <section className="py-4">
+          <div className="container">
+            <AdBanner position="homepage-top" className="max-h-32" />
+          </div>
+        </section>
+
         {/* Featured News */}
         <FeaturedNews articles={featuredArticles} isLoading={featuredLoading} />
 
         {/* Latest News */}
         <LatestNews articles={latestArticles} isLoading={latestLoading} />
+
+        {/* Middle Advertisement Banner */}
+        <section className="py-4">
+          <div className="container">
+            <AdBanner position="homepage-middle" className="max-h-40" />
+          </div>
+        </section>
 
         {/* Categories */}
         <CategorySection categories={categories} isLoading={categoriesLoading} />

@@ -21,6 +21,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2, ArrowLeft, Save } from "lucide-react";
 import { z } from "zod";
+import { ImageUpload } from "@/components/admin/ImageUpload";
 
 const articleSchema = z.object({
   title: z.string().min(1, "Título é obrigatório").max(200),
@@ -266,20 +267,17 @@ export default function ArtigoForm() {
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="image_url">URL da Imagem</Label>
-                  <Input
-                    id="image_url"
-                    value={formData.image_url}
-                    onChange={(e) =>
-                      setFormData((prev) => ({ ...prev, image_url: e.target.value }))
-                    }
-                    placeholder="https://exemplo.com/imagem.jpg"
-                  />
-                  {errors.image_url && (
-                    <p className="text-sm text-destructive">{errors.image_url}</p>
-                  )}
-                </div>
+                <ImageUpload
+                  value={formData.image_url}
+                  onChange={(url) =>
+                    setFormData((prev) => ({ ...prev, image_url: url }))
+                  }
+                  bucket="article-images"
+                  label="Imagem do Artigo"
+                />
+                {errors.image_url && (
+                  <p className="text-sm text-destructive">{errors.image_url}</p>
+                )}
               </CardContent>
             </Card>
 

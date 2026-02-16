@@ -25,25 +25,10 @@ const Index = () => {
         />
       </Helmet>
       <Layout>
-        {/* Hero Banner */}
-        <section className="gradient-hero py-12 text-primary-foreground md:py-16">
-          <div className="container">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="font-display text-3xl font-bold leading-tight md:text-4xl lg:text-5xl animate-fade-in">
-                Informação Jurídica de Qualidade para Angola
-              </h1>
-              <p className="mt-4 text-base opacity-90 md:text-lg lg:text-xl animate-slide-up">
-                Notícias, análises e orientações sobre o mundo do Direito. 
-                Credibilidade, transparência e imparcialidade.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Top Advertisement Banner */}
-        <section className="py-4">
+        <section className="py-8">
           <div className="container">
-            <AdBanner position="homepage-top" className="max-h-32" />
+            <AdBanner position="homepage-top" className="max-h-96" />
           </div>
         </section>
 

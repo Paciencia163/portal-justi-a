@@ -11,6 +11,7 @@ import {
   Menu,
   X,
   Megaphone,
+  Settings,
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -25,6 +26,7 @@ const navItems = [
   { href: "/admin/categorias", label: "Categorias", icon: FolderOpen },
   { href: "/admin/autores", label: "Autores", icon: Users },
   { href: "/admin/publicidades", label: "Publicidades", icon: Megaphone },
+  { href: "/admin/configuracoes", label: "Configurações", icon: Settings },
 ];
 
 export function AdminLayout({ children }: AdminLayoutProps) {

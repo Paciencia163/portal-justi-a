@@ -21,6 +21,7 @@ import ArtigoForm from "./pages/admin/ArtigoForm";
 import AdminCategorias from "./pages/admin/Categorias";
 import AdminAutores from "./pages/admin/Autores";
 import AdminPublicidades from "./pages/admin/Publicidades";
+import AdminConfiguracoes from "./pages/admin/Configuracoes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -52,6 +53,7 @@ const App = () => (
               <Route path="/admin/categorias" element={<ProtectedRoute><AdminCategorias /></ProtectedRoute>} />
               <Route path="/admin/autores" element={<ProtectedRoute><AdminAutores /></ProtectedRoute>} />
               <Route path="/admin/publicidades" element={<ProtectedRoute><AdminPublicidades /></ProtectedRoute>} />
+              <Route path="/admin/configuracoes" element={<ProtectedRoute><AdminConfiguracoes /></ProtectedRoute>} />
               
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
